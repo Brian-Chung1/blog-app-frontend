@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = '/api/users';
+const baseUrl = '/api/user';
 
 const getAllUsers = async () => {
   const response = await axios.get(baseUrl);
@@ -7,13 +7,13 @@ const getAllUsers = async () => {
 };
 
 const getIdUser = async (id) => {
-  const response = await axios.get(`${baseUrl}/${id}`);
+  const response = await axios.get(`${baseUrl}/id/${id}`);
   return response.data;
 };
 
-const createUser = async (user) => {
-  const response = await axios.post(baseUrl, user);
+const getUsernameUser = async (username) => {
+  const response = await axios.get(`${baseUrl}/${username}`);
   return response.data;
 };
 
-export default { getAllUsers, getIdUser, createUser };
+export default { getAllUsers, getIdUser, getUsernameUser };

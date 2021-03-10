@@ -50,6 +50,14 @@ const commentBlog = async (id, comment) => {
   return response.data;
 };
 
+const editBlog = async (id, content) => {
+  const config = {
+    headers: { Authorization: token },
+  };
+  const response = await axios.put(`${baseUrl}/${id}/edit`, content, config);
+  return response.data;
+};
+
 export default {
   setToken,
   getAllBlogs,
@@ -58,4 +66,5 @@ export default {
   deleteBlog,
   likeBlog,
   commentBlog,
+  editBlog,
 };
